@@ -28,6 +28,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function() {
     });
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
