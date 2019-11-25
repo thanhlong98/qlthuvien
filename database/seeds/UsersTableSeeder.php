@@ -12,34 +12,40 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'name user 1',
-            'email' => 'user1@gmail.com',
-            'username' => 'user1',
-            'password' => bcrypt('123123123')
+            'name' => 'Nguyễn Thành Long',
+            'email' => 'thanhlong@gmail.com',
+            'username' => 'thanhlong@gmail.com',
+            'password' => bcrypt('123')
         ]);
         DB::table('users')->insert([
-            'name' => 'name user 2',
-            'email' => 'user2@gmail.com',
-            'username' => 'user2',
-            'password' => bcrypt('123123123')
+            'name' => 'Nguyễn Văn Hoàng',
+            'email' => 'vanhoang@gmail.com',
+            'username' => 'vanhoang@gmail.com',
+            'password' => bcrypt('123')
         ]);
         DB::table('users')->insert([
-            'name' => 'name user 3',
-            'email' => 'user3@gmail.com',
-            'username' => 'user3',
-            'password' => bcrypt('123123123')
+            'name' => 'Trần Nhân Tố',
+            'email' => 'nhanto@gmail.com',
+            'username' => 'nhanto@gmail.com',
+            'password' => bcrypt('123')
         ]);
         DB::table('users')->insert([
-            'name' => 'name user 4',
-            'email' => 'user4@gmail.com',
-            'username' => 'user4',
-            'password' => bcrypt('123123123')
+            'name' => 'Trần Đặng Kim Khuê',
+            'email' => 'kimkhue@gmail.com',
+            'username' => 'kimkhue@gmail.com',
+            'password' => bcrypt('123')
         ]);
         DB::table('users')->insert([
-            'name' => 'name user 5',
-            'email' => 'user5@gmail.com',
-            'username' => 'user5',
-            'password' => bcrypt('123123123')
+            'name' => 'Nguyễn Văn Linh',
+            'email' => 'vanlinh@gmail.com',
+            'username' => 'vanlinh@gmail.com',
+            'password' => bcrypt('123')
+        ]);
+        DB::table('users')->insert([
+            'name' => 'Lê Tuấn Tài',
+            'email' => 'tuantai@gmail.com',
+            'username' => 'tuantai@gmail.com',
+            'password' => bcrypt('123')
         ]);
     }
 }
