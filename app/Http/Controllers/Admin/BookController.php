@@ -32,9 +32,9 @@ class BookController extends Controller
             $type = $request->input('type');
             $q = $request->input('q');
             if($type == 'docgia') {
-                return empty($q) || strpos($item['username'], $q) !== false;
+                return empty($q) || strpos(strtolower($item['username']), strtolower($q)) !== false;
             } else {
-                return empty($q) || strpos($item['bookname'], $q) !== false;
+                return empty($q) || strpos(strtolower($item['bookname']), strtolower($q)) !== false;
             }
         });
 
