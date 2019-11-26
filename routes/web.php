@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function() {
     Route::get('/', 'LoginController@showLoginForm')->name('login');
@@ -30,4 +27,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function() {
 
 Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/search', 'HomeController@search');
+Route::post('/search', 'HomeController@searchFullText')->name('search');
