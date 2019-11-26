@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/admin/dashboard') }}">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.show-dashboard') }}">
     <div class="sidebar-brand-icon rotate-n-15">
       <i class="fas fa-laugh-wink"></i>
     </div>
@@ -13,7 +13,7 @@
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
-    <a class="nav-link" href="{{ url('/admin/dashboard') }}">
+    <a class="nav-link" href="{{ route('admin.show-dashboard') }}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Bảng điều khiển</span></a>
   </li>
@@ -34,8 +34,8 @@
     </a>
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="{{ route('admin.issue-book') }}">Thêm sách mới</a>
-        <a class="collapse-item" href="{{ route('admin.issued-books') }}">Danh sách sách</a>
+        <a class="collapse-item" href="#">Thêm sách mới</a>
+        <a class="collapse-item" href="#">Danh sách sách</a>
       </div>
     </div>
   </li>
@@ -46,8 +46,8 @@
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="{{ route('admin.issue-book') }}">Thêm thể loại mới</a>
-        <a class="collapse-item" href="{{ route('admin.issued-books') }}">Danh sách thể loại</a>
+        <a class="collapse-item" href="#">Thêm thể loại mới</a>
+        <a class="collapse-item" href="#">Danh sách thể loại</a>
       </div>
     </div>
   </li>
@@ -59,9 +59,9 @@
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         {{-- <h6 class="collapse-header">Custom Components:</h6> --}}
-      <a class="collapse-item" href="{{ route('admin.issue-book') }}">Đăng ký mượn</a>
-        <a class="collapse-item" href="{{ route('admin.issued-books') }}">Danh sách mượn trả</a>
-        <a class="collapse-item" href="{{ route('admin.non-return-book') }}">Danh sách quá hạn</a>
+      <a class="collapse-item" href="{{ route('admin.show-issue-book') }}">Đăng ký mượn</a>
+        <a class="collapse-item" href="{{ route('admin.show-issued-books') }}">Danh sách mượn trả</a>
+        <a class="collapse-item" href="{{ route('admin.show-non-return-book') }}">Danh sách quá hạn</a>
       </div>
     </div>
   </li>
@@ -72,8 +72,8 @@
     </a>
     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="{{ route('admin.issue-book') }}">Thêm độc giả mới</a>
-        <a class="collapse-item" href="{{ route('admin.issued-books') }}">Danh sách độc giả</a>
+        <a class="collapse-item" href="#">Thêm độc giả mới</a>
+        <a class="collapse-item" href="#">Danh sách độc giả</a>
       </div>
     </div>
   </li>
@@ -84,8 +84,8 @@
     </a>
     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="{{ route('admin.issue-book') }}">Thêm tác giả mới</a>
-        <a class="collapse-item" href="{{ route('admin.issued-books') }}">Danh sách tác giả</a>
+        <a class="collapse-item" href="#">Thêm tác giả mới</a>
+        <a class="collapse-item" href="#">Danh sách tác giả</a>
       </div>
     </div>
   </li>
@@ -96,8 +96,8 @@
     </a>
     <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="{{ route('admin.issue-book') }}">Thêm thể loại mới</a>
-        <a class="collapse-item" href="{{ route('admin.issued-books') }}">Danh sách thể loại</a>
+        <a class="collapse-item" href="#">Thêm thể loại mới</a>
+        <a class="collapse-item" href="#">Danh sách thể loại</a>
       </div>
     </div>
   </li>

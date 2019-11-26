@@ -19,6 +19,25 @@ class BookController extends Controller
         return view('admin.issue-book', compact('users', 'books', 'date'));
     }
 
+    public function issueBook() {
+        $data = request()->validate([
+            'user_id' => 'required',
+            'book_id' => 'required',
+            'issueDate' => 'required',
+            'ghichu' => ''
+        ]);
+        if(empty($data['ghichu'])) {
+            $data['ghichu'] = '';
+        }
+        Issue::create([
+            'user_id' => $data['user_id'],
+            'book_id' => $data['book_id'],
+            'admin_id' => auth()->user()->id,
+            'note' => $data['ghichu']
+        ]);
+        return back()->with('success', 'Đã thêm vào cơ sỡ dữ liệu');
+    }
+
     public function showIssuedBooks(Request $request) {
         $items = Issue::select('*')->get()->toArray();
         foreach($items as $key => $item) {

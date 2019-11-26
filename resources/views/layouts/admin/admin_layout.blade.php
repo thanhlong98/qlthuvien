@@ -29,6 +29,7 @@
 </head>
 
 <body id="page-top">
+  
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -49,6 +50,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          @include('layouts.admin.flash-message')
           @yield('content')
         </div>
         <!-- /.container-fluid -->

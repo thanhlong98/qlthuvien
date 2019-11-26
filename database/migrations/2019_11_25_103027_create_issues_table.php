@@ -14,6 +14,7 @@ class CreateIssuesTable extends Migration
     public function up()
     {
         Schema::create('issues', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('book_id')->unsigned();
             $table->bigInteger('admin_id')->unsigned();
@@ -25,7 +26,6 @@ class CreateIssuesTable extends Migration
             $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
 
-            $table->primary(['user_id','book_id', 'admin_id']);
         });
     }
 
