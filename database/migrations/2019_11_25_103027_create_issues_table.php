@@ -18,7 +18,7 @@ class CreateIssuesTable extends Migration
             $table->bigInteger('book_id')->unsigned();
             $table->bigInteger('admin_id')->unsigned();
             $table->boolean('issued')->default(0);
-            $table->string('note');
+            $table->text('note');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
