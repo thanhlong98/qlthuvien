@@ -13,16 +13,20 @@ class AdminsTableSeeder extends Seeder
     public function run()
     {
         DB::table('admins')->insert([
-            'name' => 'Long',
-            'email' => 'thanhlong98@gmail.com',
-            'username' => 'thanhlong98',
-            'password' => bcrypt('123123123')
+            'name' => 'Nguyễn Thành Long',
+            'passport_id' => '031352648',
+            'address' => 'KTX',
+            'phone' => '011223344',
+            'username' => 'thanhlong',
+            'password' => bcrypt('123')
         ]);
         DB::table('admins')->insert([
-            'name' => 'Hoang',
-            'email' => 'thanhhoang98@gmail.com',
-            'username' => 'thanhhoang98',
-            'password' => bcrypt('123123123')
+            'name' => 'Nguyễn Văn Hoàng',
+            'passport_id' => '158648935',
+            'address' => 'KTX',
+            'phone' => '011223355',
+            'username' => 'vanhoang',
+            'password' => bcrypt('123')
         ]);
     }
 }
