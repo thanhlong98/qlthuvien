@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             PublishersTableSeeder::class,
             UsersTableSeeder::class,
             BooksTableSeeder::class,
-            IssuesTableSeeder::class,
+            IssuesTableSeeder::class
         ]);
     }
 }
