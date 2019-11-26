@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
+  <title>SB Admin 2 - Đăng nhập</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}"
@@ -41,30 +41,31 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Đăng nhập</h1>
                   </div>
                   <form class="user" method="post" action="{{ url('admin') }}">
                     @csrf
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" name="username"
                         id="exampleInputUsername" value="{{ old('username') }}" aria-describedby="usernameHelp"
-                        placeholder="Enter Usename..." autofocus>
+                        placeholder="Tên tài khoản" autofocus>
                     </div>
                     <div class="form-group">
                       <input type="password"
                         class="form-control form-control-user"
-                        id="exampleInputPassword" name="password" placeholder="Password">
+                        id="exampleInputPassword" name="password" placeholder="Nhập khẩu">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
                         <input type="checkbox" class="custom-control-input"
                           id="customCheck">
                         <label class="custom-control-label"
-                          for="customCheck">Remember Me</label>
+                          for="customCheck">Ghi nhớ đăng nhập</label>
                       </div>
                     </div>
                     <button class="btn btn-primary btn-user btn-block"
-                      type="submit">{{ __('Login') }}</button>
+                      type="submit">Đăng nhập</button>
+                      <!-- {{ __('Login') }} -->
                     {{-- <hr>
                     <a href="index.html" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Login with Google
@@ -75,12 +76,11 @@
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot
-                      Password?</a>
+                    <a class="small" href="forgot-password.html">Quên mật khẩu?</a>
                   </div>
-                  <div class="text-center">
+                  <!-- <div class="text-center">
                     <a class="small" href="register.html">Create an Account!</a>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
