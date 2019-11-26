@@ -12,14 +12,14 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function issueBook() {
+    public function showIssueBook() {
         $users = User::select('*')->get()->toArray();
         $books = Book::select('*')->get()->toArray();
         $date = Carbon::now()->format('Y-m-d');
         return view('admin.issue-book', compact('users', 'books', 'date'));
     }
 
-    public function issuedBooks(Request $request) {
+    public function showIssuedBooks(Request $request) {
         $items = Issue::select('*')->get()->toArray();
         foreach($items as $key => $item) {
             $items[$key]['username'] = User::find($item['user_id'])['name'];

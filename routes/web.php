@@ -16,9 +16,9 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function() {
     Route::get('/', 'LoginController@showLoginForm')->name('login');
     Route::post('/', 'LoginController@login');
     Route::group(['middleware' => ['auth:admin']], function() {
-        Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-        Route::get('/issue-book', 'BookController@issueBook')->name('issue-book');
-        Route::get('/issued-books', 'BookController@issuedBooks')->name('issued-books');
+        Route::get('/dashboard', 'DashboardController@index');
+        Route::get('/issue-book', 'BookController@showIssueBook');
+        Route::get('/issued-books', 'BookController@showIssuedBooks');
         Route::get('/non-return-books', 'BookController@nonReturnBooks')->name('non-return-book');
 
         Route::post('/logout', 'LoginController@logout')->name('logout');
