@@ -47,7 +47,8 @@ class HomeController extends Controller
             $books = DB::table('books')
             ->leftJoin('authors', 'books.author_id', '=', 'authors.id')
             ->leftJoin('publishers', 'books.publisher_id', '=', 'publishers.id')
-            ->leftJoin('book_shelves', 'books.book_shelf_id', '=', 'book_shelves.id');
+            ->leftJoin('book_shelves', 'books.book_shelf_id', '=', 'book_shelves.id')
+            ->leftJoin('issues', 'books.id', '=', 'issues.book_id');
     
             if(!empty($name)) {
                 $books = $books->where('books.name', 'LIKE', "%{$name}%");
@@ -61,7 +62,7 @@ class HomeController extends Controller
                 $books = $books->Where('publishers.name', 'like', "%{$publisher}%");
             }
             
-            $books = $books->select('books.name as name', 'authors.name as author', 'books.num_pages as num_page', 'books.quantity as quantity', 'book_shelves.address as address', 'publishers.name as publisher')->get();
+            $books = $books->select('books.id as book_id' ,'books.name as name', 'authors.name as author', 'books.num_pages as num_page', 'books.quantity as quantity', 'book_shelves.address as address', 'publishers.name as publisher')->get();
 
             if($books->count() > 0) {
                 $output = "";
@@ -85,7 +86,10 @@ class HomeController extends Controller
                     $output .= "<td>".($value->author)."</td>";
                     $output .= "<td>".($value->publisher)."</td>";
                     $output .= "<td>".($value->num_page)."</td>";
-                    $output .= "<td>".($value->quantity)."</td>";
+                    // Tính số lượng còn
+                    $countIssued = DB::table('issues')->where('book_id', $value->book_id)->count() ?? 0;
+
+                    $output .= "<td>".($value->quantity - $countIssued)."</td>";
                     $output .= "<td>".($value->address)."</td>";
                     $output .= "</tr>";
                 }
